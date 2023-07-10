@@ -74,11 +74,11 @@ app.get('/gpt/:text', async (req, res) => {
       const response = await openai.createChatCompletion({
         model: "gpt-4",
         messages: messages,
-        temperature: 0.5,
+        temperature: 1,
         max_tokens: 128,
         top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
+        frequency_penalty: 1,
+        presence_penalty: 1,
       });
     
       if (response.data.choices) {
