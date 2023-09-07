@@ -46,7 +46,7 @@ app.get('/gpt/:text', async (req, res) => {
     
     //The agent should recieve Username:Message in the text to identify conversations with different users in his history. 
     console.log (req.params.text)
-    inputtext = req.params.text.replace(/\s+\s/g , " PLUSSIGN ").replace(/+/g , " ").replace(/\sPLUSSIGN\s/g , " + ");
+    inputtext = req.params.text.replaceAll(" + ", " PLUSSIGN ").replaceAll("+", " ").replaceAll(" PLUSSIGN ", " + ");
     console.log (inputtext)
     const text = inputtext
     const { Configuration, OpenAIApi } = require("openai");
