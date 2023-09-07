@@ -45,7 +45,7 @@ if (process.env.GPT_MODE === "CHAT"){
 app.get('/gpt/:text', async (req, res) => {
     
     //The agent should recieve Username:Message in the text to identify conversations with different users in his history. 
-    
+    console.log(req.params)
     const text = req.params.text
     const { Configuration, OpenAIApi } = require("openai");
 
